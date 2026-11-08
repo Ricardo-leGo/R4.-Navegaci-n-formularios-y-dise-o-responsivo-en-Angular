@@ -1,0 +1,18 @@
+@if (evento) {
+  <div class="detail-container">
+    <img [src]="evento.imagenUrl" [alt]="evento.titulo" class="detail-img" />
+    <div class="detail-content">
+      <h2>{{ evento.titulo }}</h2>
+      <p class="description">{{ evento.descripcion }}</p>
+      <hr />
+      <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+      <p><strong>Ubicación:</strong> {{ evento.lugar }}</p>
+      <p><strong>Cupos disponibles:</strong> {{ evento.cupoDisponible }}</p>
+
+      <div class="actions">
+        <a [routerLink]="['/registro', evento.id]" class="btn btn-primary">Registrarse a este evento</a>
+        <a routerLink="/eventos" class="btn btn-secondary">Volver a la lista</a>
+      </div>
+    </div>
+  </div>
+}

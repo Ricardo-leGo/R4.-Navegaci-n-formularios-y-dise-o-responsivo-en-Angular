@@ -1,0 +1,18 @@
+<h2>Eventos Disponibles</h2>
+<div class="grid-container">
+  @for (evento of eventos(); track evento.id) {
+    <div class="card">
+      <img [src]="evento.imagenUrl" [alt]="evento.titulo" class="card-img" />
+      <div class="card-body">
+        <h3>{{ evento.titulo }}</h3>
+        <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+        <p><strong>Lugar:</strong> {{ evento.lugar }}</p>
+        <p><strong>Cupo:</strong> {{ evento.cupoDisponible }} lugares</p>
+        <div class="card-actions">
+          <a [routerLink]="['/eventos', evento.id]" class="btn btn-secondary">Ver detalle</a>
+          <a [routerLink]="['/registro', evento.id]" class="btn btn-primary">Inscribirme</a>
+        </div>
+      </div>
+    </div>
+  }
+</div>
